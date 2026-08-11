@@ -1,0 +1,24 @@
+# data.yaml — configuracao do conjunto de dados para treinar o detector de EPI
+# ESZA019 - Visao Computacional - Trabalho Final (Deteccao de Uso de EPI)
+#
+# Estrutura de pastas esperada (formato YOLO):
+#   dataset/
+#     images/train/*.jpg     labels/train/*.txt
+#     images/val/*.jpg       labels/val/*.txt
+# Cada .txt tem uma linha por objeto:  <classe> <x_centro> <y_centro> <larg> <alt>
+# (coordenadas normalizadas de 0 a 1).
+
+path: ./dataset          # raiz do dataset (ajuste para o caminho real)
+train: images/train
+val: images/val
+
+# Classes do problema (a MESMA ordem deve ser usada nas anotacoes .txt)
+names:
+  0: pessoa
+  1: capacete
+  2: colete
+
+# Dicas:
+# - Anote as imagens com uma ferramenta como Roboflow, CVAT ou LabelImg (exportar em formato YOLO).
+# - Datasets publicos de EPI (ex.: "Hard Hat Workers", SH17) podem ser usados/adaptados,
+#   desde que remapeados para estas 3 classes.
